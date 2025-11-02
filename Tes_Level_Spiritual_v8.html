@@ -3,24 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tes Level Spiritual — Pengasuh Santri (v8 Reflektif)</title>
+<title>Tes Level Spiritual — Pengasuh Santri (v9)</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f5f8fc;--card:#fff;--muted:#6d7787;--accent:#244b7e;--line:#e5edf6}
-*{box-sizing:border-box}body{margin:0;font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1220}
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1220}
 .container{max-width:980px;margin:28px auto;padding:16px}
-.header{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(10,20,40,.06);text-align:center;margin-bottom:16px}
-h1{margin:0;color:var(--accent)} .sub{color:var(--muted);margin-top:6px}
+.header{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(10,20,40,.06);text-align:center;margin-bottom:16px}
+h1{margin:0;color:var(--accent);font-weight:800}
+.sub{color:var(--muted);margin-top:6px}
 .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(30,50,90,.06);margin-bottom:16px}
 label{display:block;margin-top:12px;font-weight:700;color:var(--accent)}
-input[type=text], textarea, input[type=number], input[type=password]{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fbfdff;margin-top:6px}
-button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 14px;cursor:pointer}
+input[type=text],textarea,input[type=number],input[type=password]{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fbfdff;margin-top:6px}
+button{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer}
+button:disabled{opacity:.6;cursor:not-allowed}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid #ccdaef}
 .small{font-size:13px;color:var(--muted)}
 .hidden{display:none}
 
-.statement{padding:16px;border:1px solid #edf3fb;border-radius:10px;background:#fff;font-size:18px}
-.note{font-size:12px;color:#97a1b3;margin-top:8px;line-height:1.5}
+.statement{padding:16px;border:1px solid #edf3fb;border-radius:10px;background:#fff;font-size:18px;line-height:1.5}
+.note{font-size:12px;color:#8090a6;margin-top:10px}
 
 .scale-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .scale-item{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;background:#f6f9ff;transition:.15s}
@@ -30,12 +33,12 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
 
 .cert-wrap{background:#fff;border-radius:14px;padding:22px;box-shadow:0 10px 28px rgba(30,50,90,.08);}
 .cert{max-width:820px;margin:8px auto;padding:26px;border-radius:10px;position:relative;background:#fcfdff}
-.cert:before, .cert:after{content:"";position:absolute;inset:8px;border:2px solid #d9e2f1;border-radius:8px;pointer-events:none}
-.cert h2{color:var(--accent);text-align:center;margin:8px 0} .meta{text-align:center;color:var(--muted);white-space:pre-wrap}
+.cert:before,.cert:after{content:"";position:absolute;inset:8px;border:2px solid #d9e2f1;border-radius:8px;pointer-events:none}
+.cert h2{color:var(--accent);text-align:center;margin:8px 0}
+.meta{text-align:center;color:var(--muted);white-space:pre-wrap}
 .badge{display:inline-block;background:#eef6ff;color:var(--accent);padding:6px 12px;border-radius:999px;font-weight:800;border:1px solid #dce9ff}
-.whatsapp{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid #cfe9db;background:#e9fbf2;color:#128c7e;padding:8px 12px;border-radius:10px}
-.whatsapp img{width:18px;height:18px}
-.table{width:100%;border-collapse:collapse;margin-top:12px} .table th,.table td{padding:8px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th,.table td{padding:8px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
 .footer{font-size:13px;color:var(--muted);text-align:center;margin-top:18px}
 </style>
 </head>
@@ -46,9 +49,12 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
     <div class="sub">Alat Tes ini dikembangkan oleh Multazam Zakaria berdasarkan Peta Kesadaran Dr. David R. Hawkins</div>
   </div>
 
+  <!-- Beranda -->
   <div class="card" id="home">
-    <label>Nama Lengkap</label><input id="nama" type="text" placeholder="Nama pengasuh..." />
-    <label>Nama Instansi / Pesantren</label><input id="instansi" type="text" placeholder="Nama pesantren / instansi..." />
+    <label>Nama Lengkap</label>
+    <input id="nama" type="text" placeholder="Nama pengasuh..." />
+    <label>Nama Instansi / Pesantren</label>
+    <input id="instansi" type="text" placeholder="Nama pesantren / instansi..." />
     <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
       <button onclick="startTest()">Mulai Tes Spiritual</button>
       <button class="btn-ghost" onclick="openReport()">Laporan Riyadhah Mingguan</button>
@@ -56,12 +62,17 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
       <div style="flex:1"></div>
       <button class="btn-ghost" onclick="openAdmin()">Login Admin</button>
     </div>
+    <div id="homeNote" class="small" style="margin-top:8px">Silakan isi Nama & Instansi terlebih dahulu.</div>
   </div>
 
+  <!-- Tes -->
   <div class="card hidden" id="testCard">
     <div class="small" id="qCounter"></div>
     <div id="question" class="statement"></div>
-    <div class="note">Berikan penilaian yang jujur untuk mendapatkan hasil yang sebenarnya. Konteks pernyataan adalah apa yang Anda alami atau rasakan dalam 2-3 bulan terakhir. Ukuran Penilaian: Tidak Pernah (Perilaku ini hampir tidak pernah muncul), Jarang (Terjadi 1-2 kali sebulan), Kadang (Terjadi 1-2 kali seminggu), Sering (Terjadi hampir setiap hari), Selalu (Perilaku/reaksi ini merupakan pola dominan).</div>
+    <div class="note">
+      Berikan penilaian yang <em>jujur</em> untuk hasil yang sebenarnya (periode 1 bulan terakhir).<br/>
+      Ukuran: 1 = Tidak Pernah, 2 = Jarang, 3 = Kadang, 4 = Sering, 5 = Selalu.
+    </div>
     <div id="scale" class="scale-list"></div>
     <div style="margin-top:12px;display:flex;gap:8px">
       <button id="prevBtn" class="btn-ghost" onclick="prevQ()">Kembali</button>
@@ -73,11 +84,12 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
     <div id="progress" class="small" style="margin-top:10px"></div>
   </div>
 
+  <!-- Hasil -->
   <div class="card hidden" id="resultCard">
     <div class="cert-wrap">
       <div class="cert">
         <div style="text-align:center;margin-bottom:8px"><span class="badge">Sertifikat Hasil Tes</span></div>
-        <h2 id="certTitle"></h2>
+        <h2 id="certTitle">Level Spiritual Anda Saat Ini</h2>
         <div class="meta" id="certDesc"></div>
         <div style="margin-top:18px;font-size:15px">
           <div><strong>Nama:</strong> <span id="certNama"></span></div>
@@ -86,10 +98,6 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
         </div>
       </div>
     </div>
-    <div style="margin-top:16px">
-      <div class="small" style="margin-bottom:8px">Apakah Anda ingin naik ke level yang lebih tinggi? Untuk naik ke level yang lebih tinggi, Anda perlu melakukan beberapa aksi Riyadhah, silakan hubungi Supervisor Anda.</div>
-      <a class="whatsapp" href="https://wa.me/6282281642736" target="_blank" rel="noopener"><img src="assets/wa.svg" alt="WA"> Hubungi via WhatsApp</a>
-    </div>
     <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
       <button onclick="window.print()">Cetak Sertifikat</button>
       <button class="btn-ghost" onclick="saveMember()">Simpan ke Member</button>
@@ -97,21 +105,24 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
     </div>
   </div>
 
+  <!-- Laporan Riyadhah -->
   <div class="card hidden" id="reportCard">
     <h3>Laporan Riyadhah Mingguan</h3>
-    <div class="small">Isi pekan dan jawablah satu per satu.</div>
-    <label>Pekan ke-</label><input id="weekNo" type="number" min="1" value="1" />
+    <div class="small">Isi pekan & jawab satu per satu.</div>
+    <label>Pekan ke-</label>
+    <input id="weekNo" type="number" min="1" value="1" />
     <div id="reportStep" style="margin-top:12px"></div>
     <div style="margin-top:12px;display:flex;gap:8px">
       <button id="repPrev" class="btn-ghost" onclick="repPrev()">Kembali</button>
       <div style="flex:1"></div>
       <button id="repNext" onclick="repNext()">Lanjut</button>
-      <button id="repSend" onclick="sendReport()">Kirim ke Supervisor</button>
+      <button id="repSend" onclick="sendReport()">Kirim ke Google Sheet</button>
       <button class="btn-ghost" onclick="goHome()">Batal</button>
     </div>
     <div id="reportStatus" class="small" style="margin-top:8px"></div>
   </div>
 
+  <!-- Member -->
   <div class="card hidden" id="memberCard">
     <h3>Member — Riwayat & Laporan</h3>
     <div class="small">Masuk untuk melihat hasil tersimpan atau mengisi laporan.</div>
@@ -132,9 +143,10 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
     </div>
   </div>
 
+  <!-- Admin -->
   <div class="card hidden" id="adminLogin">
     <h3>Admin Panel</h3>
-    <div class="small">Masukkan PIN Admin untuk melihat data peserta.</div>
+    <div class="small">Masukkan PIN Admin untuk melihat data peserta (perangkat ini).</div>
     <label>PIN Admin</label><input id="adminPin" type="password" placeholder="PIN Admin" />
     <div style="margin-top:10px">
       <button onclick="adminAuth()">Masuk</button>
@@ -143,44 +155,179 @@ button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10
   </div>
 
   <div class="card hidden" id="adminPanel">
-    <h3>Admin — Daftar Peserta</h3>
+    <h3>Admin — Daftar Peserta (Perangkat Ini)</h3>
     <table class="table" id="adminTable">
       <thead><tr><th>Nama</th><th>Instansi</th><th>Level</th><th>Waktu</th><th>Aksi</th></tr></thead>
       <tbody></tbody>
     </table>
+    <div class="small" style="margin-top:6px">
+      Catatan: Untuk melihat semua hasil dari berbagai perangkat, buka Google Sheet milik Kiai (Apps Script).
+    </div>
     <div style="margin-top:12px;display:flex;gap:8px">
       <button onclick="exportCSV()">Ekspor CSV</button>
       <button class="btn-ghost" onclick="adminLogout()">Keluar</button>
     </div>
-    <div id="adminDetail" class="small" style="margin-top:12px"></div>
+    <div id="adminDetail" style="margin-top:12px"></div>
   </div>
 
   <div class="footer">© Tes Level Spiritual — Pengasuh Santri</div>
 </div>
 
 <script>
-const FORM_ENDPOINT = 'https://formspree.io/f/xwpwbypj';
+// ========= KONFIGURASI =========
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbzXx_bR4xSRLfFe86jza6hVw7HUmf9bR_G-4JmpxZHPZGNjkBUYUS_9R9cvTINNWR1Paw/exec';
 const ADMIN_PIN = 'AllahSaja';
-const LEVELS = [{"order": 1, "id": "malu", "name": "Malu (Shame)", "scale": 20, "description": "Level Malu (Shame) adalah palung terdalam dalam Peta Kesadaran manusia. Ini bukan sekadar rasa malu sesaat karena melakukan kesalahan, melainkan kondisi jati diri yang terasa rusak dan tidak berharga. Ini adalah titik di mana individu merasa ingin menghilang dari muka bumi. Bagi seorang pengasuh santri, level ini mewujud sebagai beban spiritual dan psikologis yang luar biasa berat. Rasanya seolah-olah seluruh keberadaan Anda adalah aib yang harus disembunyikan. Kehadiran Anda terasa menjadi racun bagi lingkungan asrama.", "statements": ["Saya menyadari bahwa saya sering menunduk atau menghindari kontak mata dengan pimpinan atau rekan senior karena merasa rendah diri.", "Saya merasa tidak pantas memimpin atau memberi nasihat spiritual, seolah-olah keberadaan saya menjadi beban.", "Saya merasa sulit berbicara di depan umum karena menganggap apa yang saya sampaikan tidak berharga.", "Saya cenderung menyembunyikan kesalahan karena takut dihakimi atau diekspos, hingga terlintas pikiran untuk mengundurkan diri."]}, {"order": 2, "id": "rasa", "name": "Rasa Bersalah (Guilt)", "scale": 30, "description": "Level Rasa Bersalah (Guilt) merupakan langkah maju dari Malu, karena pada tingkatan ini, Anda telah menemukan cukup energi untuk menunjuk pada suatu tindakan spesifik yang salah. Jika Malu berkata, \"Saya adalah kesalahan,\" maka Rasa Bersalah berkata, \"Saya melakukan kesalahan yang besar dan pantas dihukum.\" Walaupun energi Rasa Bersalah lebih tinggi, ia tetap destruktif karena energinya terikat kuat pada obsesi akan hukuman, sanksi, dan penyesalan moral yang tiada akhir. Dalam perspektif spiritual, Rasa Bersalah sering digunakan oleh ego untuk memblokir kemajuan, meyakini bahwa penebusan hanya bisa didapatkan melalui penderitaan berkelanjutan.", "statements": ["Saya menyadari diri saya terlalu keras menghukum diri atas kegagalan atau kesalahan yang terjadi.", "Saya terkadang menyalahkan sistem atau rekan kerja di depan pihak luar sebagai pelarian dari rasa bersalah.", "Saya merasa pantas dihukum atas kesalahan masa lalu, seolah penderitaan menjadi penebusan.", "Saya cenderung terpaku pada penyesalan masa lalu dan sulit beralih fokus ke solusi saat ini."]}, {"order": 3, "id": "apatis", "name": "Apatis (Apathy)", "scale": 50, "description": "Level Apatis (Apathy) adalah kondisi putus asa yang mendalam, dihasilkan dari pengurasan energi yang panjang dari Rasa Bersalah dan Malu. Jika Rasa Bersalah adalah penyiksaan aktif, maka Apatis adalah keadaan mati rasa yang dihasilkan dari penyerahan total. Energi yang ada di level ini sangat rendah, nyaris tidak ada. Apatis bukan berarti Anda santai, melainkan Anda lumpuh. Anda melihat diri Anda sebagai korban yang tidak berdaya, yakin bahwa upaya apa pun tidak akan mengubah nasib. Anda telah menyerah untuk memperjuangkan diri sendiri atau santri Anda.", "statements": ["Saya merasakan dorongan yang lemah untuk membuat program baru atau mengevaluasi program lama, seolah tak ada harapan.", "Saya sering merespons masalah santri dengan pasrah negatif seperti ‘terserah’ atau ‘sudah takdirnya’.", "Saya kerap absen atau melewatkan piket dan pertemuan tanpa alasan kuat karena merasa kosong.", "Saya menunda pekerjaan penting hingga batas akhir dan tampak datar saat berinteraksi."]}, {"order": 4, "id": "sedih", "name": "Sedih (Grief)", "scale": 75, "description": "Level Sedih (Grief) adalah kondisi duka dan penyesalan yang aktif, namun masih melumpuhkan. Jika Apatis adalah mati rasa, maka Sedih adalah hidup dalam kenangan pahit akan kehilangan. Energi ini terikat kuat pada masa lalu.", "statements": ["Saya sering mengulang-ulang kisah kehilangan atau masalah yang sudah berlalu.", "Saya mudah runtuh ketika dikritik pimpinan, dan menyimpannya sebagai duka yang panjang.", "Saya sulit melepaskan kekecewaan dari kegagalan masa lalu sehingga langkah saya terasa berat.", "Saya kerap mencari penguatan atau simpati atas beban yang saya rasakan."]}, {"order": 5, "id": "takut", "name": "Takut (Fear)", "scale": 100, "description": "Level Takut (Fear) adalah kondisi kecemasan yang konstan. Jika Sedih berfokus pada apa yang telah hilang, maka Takut berfokus pada ancaman dan bahaya di masa depan. Energi di level ini lebih tinggi dari Sedih karena adanya dorongan untuk bertahan hidup (survival), namun energi ini bersifat melumpuhkan dan reaktif. Seorang pengasuh di level ini melihat dunia pesantren sebagai tempat yang tidak aman, penuh risiko, dan berbahaya. Semua keputusan didasarkan pada upaya untuk menghindari bahaya.", "statements": ["Saya menjadi kaku pada aturan karena takut disalahkan ketika terjadi kekeliruan.", "Saya merasakan kecemasan berlebihan menjelang evaluasi atau kedatangan pimpinan.", "Saya enggan mengambil keputusan mandiri dan menunggu instruksi yang sangat detail.", "Saya menahan diri mencoba metode baru karena takut gagal dan takut dikritik."]}, {"order": 6, "id": "keinginan", "name": "Keinginan (Desire)", "scale": 125, "description": "Level Keinginan (Desire) adalah kondisi ambisi dan kerinduan yang intens. Jika Takut membuat Anda pasif karena khawatir, maka Keinginan membuat Anda aktif karena terikat pada hasil eksternal. Energi di level ini sangat kuat, mendorong tindakan, namun energi ini bersifat craving (haus) dan sering berujung pada kekecewaan dan frustrasi. Seorang pengasuh di level ini melihat dunia pesantren sebagai tempat untuk mendapatkan sesuatu—prestasi, pujian, pengakuan, atau kenaikan status. Masalah muncul ketika keinginan ini tidak terpenuhi.", "statements": ["Saya menyadari motivasi saya meningkat ketika ada imbalan atau pujian yang menanti.", "Saya merasa sangat kecewa ketika karya saya tidak diakui sebagaimana yang saya harapkan.", "Saya cenderung fokus pada hasil dan mengabaikan proses pertumbuhan santri.", "Saya mudah mengeluh ketika tugas yang datang tidak sesuai dengan keinginan pribadi."]}, {"order": 7, "id": "marah", "name": "Marah (Anger)", "scale": 150, "description": "Level Marah (Anger) adalah kondisi kebencian dan permusuhan yang aktif. Jika Keinginan membuat Anda frustrasi karena tidak mendapatkan sesuatu, maka Marah memberi Anda energi untuk melawan dan menghancurkan apa yang menghalangi. Energi di level ini sangat tinggi (tertinggi di zona Force), namun bersifat destruktif dan seringkali tidak terkendali. Seorang pengasuh di level ini melihat santri yang bermasalah, sistem yang buruk, atau rekan kerja yang pasif sebagai musuh yang harus dilawan dan ditundukkan. Ia menggunakan intimidasi dan ledakan emosi sebagai alat kontrol utama.", "statements": ["Saya menyadari suara saya meninggi atau membentak saat frustrasi terhadap santri.", "Saya cenderung defensif saat menerima kritik, dan ingin membenarkan diri.", "Saya mengeluh tentang rekan di belakang mereka, alih-alih berdialog dengan tenang.", "Saya kadang memberikan hukuman yang berlebihan atau tidak konsisten sebagai pelampiasan."]}, {"order": 8, "id": "bangga", "name": "Bangga (Pride)", "scale": 175, "description": "Level Bangga (Pride) adalah kondisi kesombongan dan ilusi keunggulan. Ini adalah level tertinggi di zona Force. Jika Marah bersifat destruktif dan tidak stabil, maka Bangga menciptakan ketenangan semu melalui penolakan diri dan pembenaran diri. Energi di level ini tinggi dan tampak berwibawa dari luar, namun sangat rapuh dan defensif. Seorang pengasuh di level ini melihat sistem, metode, atau dirinya sendiri sebagai yang paling sempurna, menolak kritik, dan percaya bahwa kegagalan selalu disebabkan oleh faktor eksternal (santri, pimpinan, nasib).", "statements": ["Saya merasa sulit menerima bahwa ada metode pengasuhan yang lebih baik dari metode saya.", "Saya memandang diri lebih senior atau lebih pintar dari rekan yang lebih muda.", "Saya memberi nasihat bernada menggurui meski tidak diminta.", "Saya membenarkan kegagalan dengan menyalahkan santri atau kondisi eksternal."]}, {"order": 9, "id": "keberanian", "name": "Keberanian (Courage)", "scale": 200, "description": "Ini adalah Titik Kritis (Tipping Point). Anda tidak lagi lumpuh oleh ketakutan atau ego. Anda melihat masalah sebagai tantangan yang dapat diatasi. • Anda mengakui kesulitan pengasuhan, tetapi berkata, \"Saya mampu belajar dan mencari solusi.\" • Anda aktif mencari pelatihan, membaca buku, dan mencoba metode baru tanpa rasa malu.", "statements": ["Saya berani mengakui kesalahan di depan pimpinan atau santri tanpa menyalahkan siapa pun.", "Saya berani mengambil keputusan yang berisiko demi pertumbuhan santri.", "Saya memandang kesulitan sebagai tantangan yang dapat saya pelajari dan atasi.", "Saya proaktif mengusulkan perbaikan sistem pengasuhan."]}, {"order": 10, "id": "netralitas", "name": "Netralitas (Neutrality)", "scale": 250, "description": "Level Netralitas (Neutrality) adalah kondisi kenyamanan, kelenturan, dan non-penghakiman. Jika Keberanian (200) membuat Anda aktif berjuang, maka Netralitas membuat Anda tenang dan nyaman dalam ketidakpastian. Ini adalah level yang ditandai dengan keamanan batin yang tidak bergantung pada kondisi luar. Seorang pengasuh di level ini melihat dunia pesantren sebagai tempat yang dapat diatur. Ia tidak panik menghadapi krisis dan mampu bekerja sama dengan semua pihak tanpa drama atau reaksi emosional yang berlebihan.", "statements": ["Saya berusaha menjadi mediator yang adil tanpa memihak.", "Saya tetap tenang dan stabil di tengah dinamika asrama yang penuh warna.", "Saya menerima perubahan jadwal atau aturan dengan kelenturan.", "Saya mampu bekerja sama dengan semua rekan tanpa dipengaruhi sentimen pribadi."]}, {"order": 11, "id": "kemauan", "name": "Kemauan (Willingness)", "scale": 310, "description": "Level Kemauan (Willingness) adalah kondisi proaktif, antusias, dan memiliki niat baik yang tulus. Jika Netralitas (250) membuat Anda nyaman, maka Kemauan memberikan Anda dorongan energi yang bersemangat untuk melayani dan tumbuh. Ini adalah level yang ditandai dengan komitmen penuh pada perbaikan dan pembelajaran. Seorang pengasuh di level ini melihat dunia pesantren sebagai tempat yang penuh peluang. Ia selalu siap sedia untuk bertindak, belajar, dan memberikan kontribusi yang berarti.", "statements": ["Saya menawarkan diri membantu pekerjaan yang berat atau tidak disukai demi kemajuan bersama.", "Saya merasa antusias ketika merancang atau menjalankan program baru.", "Saya terus mencari cara dan menutup pintu pada alasan yang melemahkan.", "Saya cepat pulih dan bangkit setelah mengalami kegagalan besar."]}, {"order": 12, "id": "penerimaan", "name": "Penerimaan (Acceptance)", "scale": 350, "description": "Level Penerimaan (Acceptance) adalah kondisi wawasan yang damai bahwa segala sesuatu berjalan sempurna sebagaimana mestinya, meskipun tidak sesuai dengan harapan pribadi. Jika Kemauan (310) membuat Anda bersemangat untuk mengubah dunia, maka Penerimaan membuat Anda tenang karena tahu bahwa dunia sudah sempurna pada saat ini. Ini adalah level yang ditandai dengan kebebasan dari keterikatan emosional pada hasil. Seorang pengasuh di level ini melihat dunia pesantren sebagai tempat yang teratur dan setiap peristiwa memiliki tujuan. Ia tidak lagi menyia-nyiakan energi melawan masa lalu atau kondisi saat ini.", "statements": ["Saya menerima realitas sebagaimana adanya tanpa banyak keluhan.", "Saya mampu memaafkan kesalahan besar santri atau rekan dengan tulus.", "Saya memusatkan perhatian pada solusi sistemik, bukan pada siapa yang patut disalahkan.", "Saya merasa damai meski hasil belum sempurna, sambil bersyukur atas prosesnya."]}, {"order": 13, "id": "akal", "name": "Akal Budi (Reason)", "scale": 400, "description": "Level Akal Budi (Reason) adalah kondisi intelektual, logis, dan rasional. Jika Penerimaan (350) memberi Anda kedamaian batin, maka Akal Budi memberi Anda alat untuk memahami dan menata dunia secara objektif. Ini adalah level yang ditandai dengan kehausan akan ilmu, data, dan pemikiran yang jernih. Seorang pengasuh di level ini melihat dunia pesantren sebagai sistem yang dapat dioptimalkan melalui pengetahuan. Ia memimpin dengan data, logika, dan strategi yang terencana.", "statements": ["Saya merumuskan masalah menjadi hipotesis yang bisa diuji dan dievaluasi.", "Saya mengambil keputusan berdasarkan data, logika, dan analisis yang memadai.", "Saya membaca dan meneliti metode pengasuhan secara rutin untuk perbaikan berkelanjutan.", "Saya menjaga emosi tetap stabil demi kejernihan berpikir dan objektivitas."]}, {"order": 14, "id": "cinta", "name": "Cinta (Love)", "scale": 500, "description": "Level Cinta (Love) adalah kondisi kasih sayang tanpa syarat, pengampunan, dan rasa hormat yang mendalam terhadap kehidupan. Jika Akal Budi (400) melihat dunia sebagai masalah yang dapat dipecahkan, maka Cinta melihat dunia sebagai manifestasi keindahan dan kesatuan. Ini adalah level yang ditandai dengan keintiman batin dengan semua ciptaan. Seorang pengasuh di level ini melihat santri, rekan kerja, dan pimpinan bukan sebagai objek untuk dianalisis, tetapi sebagai bagian dari dirinya sendiri. Ia memimpin dengan welas asih dan melayani tanpa mengharapkan balasan.", "statements": ["Saya memberikan kasih sayang tulus kepada santri yang paling menantang sekalipun.", "Saya mendahulukan rahmat dan kemaslahatan bersama daripada kekakuan aturan.", "Saya melihat potensi Ilahi di balik kekurangan setiap orang.", "Saya merasakan keterhubungan batin dengan seluruh komunitas pesantren."]}, {"order": 15, "id": "suka", "name": "Suka Cita (Joy)", "scale": 540, "description": "Level Suka Cita (Joy) adalah kondisi kebahagiaan batin yang stabil, berkelanjutan, dan independen. Jika Cinta (500) adalah emosi memberi dan welas asih, maka Suka Cita adalah keadaan eksistensial yang tidak lagi membutuhkan objek eksternal untuk dipicu. Energi di level ini sangat tinggi, riang, dan transformatif. Seorang pengasuh di level ini melihat kehidupan dan lingkungan pesantren sebagai keajaiban yang harus dirayakan setiap saat. Ia tidak sekadar bahagia, tetapi merupakan sumber kebahagiaan itu sendiri.", "statements": ["Saya menjalankan tugas terberat dengan hati yang ringan dan senyum yang tulus.", "Saya merasakan kebahagiaan yang lahir dari dalam, bukan dari pujian atau hasil eksternal.", "Saya mampu menertawakan kekeliruan sebagai pelajaran yang menguatkan.", "Saya memancarkan kedamaian dan optimisme yang menular kepada lingkungan."]}, {"order": 16, "id": "kedamaian", "name": "Kedamaian (Peace)", "scale": 600, "description": "Level Kedamaian (Peace) adalah kondisi transendensi, ketenangan absolut, dan keheningan mendalam. Jika Suka Cita (540) adalah emosi kegembiraan yang tinggi, maka Kedamaian adalah keadaan yang melampaui semua emosi, termasuk kegembiraan. Energi di level ini sangat langka, suci, dan sangat kuat secara spiritual. Seorang pengasuh di level ini melihat kehidupan dan masalah pesantren sebagai halus dan tidak penting di hadapan keagungan batin. Ia adalah teladan hidup yang memancarkan ketenangan ke seluruh komunitas.", "statements": ["Saya mampu memasuki dan menjaga keheningan batin dalam waktu yang lama.", "Saya merasakan kehadiran saya menenangkan suasana di sekeliling.", "Saya berpikir, berbicara, dan bertindak dari tempat keselarasan batin.", "Saya tidak dihantui kekhawatiran masa depan; saya bertindak dari ketenangan dan tawakal."]}, {"order": 17, "id": "pencerahan", "name": "Pencerahan (Enlightenment)", "scale": 850, "description": "Level Pencerahan (Enlightenment) adalah kondisi kesadaran murni, Kesatuan, dan Realitas Tertinggi. Ini adalah level yang dicapai oleh para Nabi, Wali, dan Guru spiritual agung. Seorang pengasuh di level ini tidak lagi berfungsi sebagai individu, tetapi sebagai manifestasi dari Kasih Sayang Ilahi itu sendiri. Keberadaannya secara otomatis mengubah kesadaran kolektif seluruh pesantren. Inilah puncak dari perjalanan \"Pengasuh Naik Level\"—Anda telah menjadi instrumen perubahan spiritual.", "statements": ["Saya hidup sebagai pelayan murni dari Kehendak Ilahi.", "Saya merasakan nasihat saya membawa perubahan batin yang cepat pada orang yang mendengarkan.", "Saya tidak digerakkan oleh ego atau hasrat pribadi; yang memimpin adalah rahmat.", "Saya beroperasi dalam kasih sayang dan kedamaian yang berkelanjutan."]}];
 
+// ========= DATA LEVEL =========
+const LEVELS = [
+  // order mengikuti 1..17
+  { id:'malu', order:1,  scale:20,  name:'Malu (Shame)',
+    description:'Level Malu (Shame) adalah palung terdalam dalam Peta Kesadaran manusia... Kehadiran Anda terasa menjadi racun bagi lingkungan asrama.',
+    statements:[
+      'Saya sering merasa tidak pantas memimpin atau menjadi teladan bagi santri.',
+      'Saya menghindari rapat, interaksi, atau kesempatan tampil karena takut dinilai buruk.',
+      'Saya kadang merasa keberadaan saya justru membawa beban bagi lingkungan asrama.',
+      'Saya menutup diri dan memilih diam agar tidak mempermalukan diri sendiri.'
+    ]},
+  { id:'rasa', order:2,  scale:30,  name:'Rasa Bersalah (Guilt)',
+    description:'Level Rasa Bersalah (Guilt) merupakan langkah maju dari Malu... sering digunakan ego untuk memblokir kemajuan.',
+    statements:[
+      'Saya sering menegur santri dengan keras seolah ingin membuktikan bahwa saya bukan penyebab kesalahan mereka.',
+      'Saya memaksakan diri bekerja tanpa henti karena merasa belum pantas beristirahat sebelum semua santri berubah.',
+      'Saya sering mengulang-ulang penyesalan masa lalu di pikiran saya dan sulit memaafkan diri sendiri.',
+      'Saya kadang merasa tenang saat orang bersimpati pada penderitaan saya, seolah itu menebus kesalahan.'
+    ]},
+  { id:'apatis', order:3,  scale:50,  name:'Apatis (Apathy)',
+    description:'Level Apatis (Apathy) adalah kondisi putus asa yang mendalam... Anda telah menyerah memperjuangkan diri sendiri atau santri Anda.',
+    statements:[
+      'Saya sering menjalankan tugas sekadar agar terlihat bekerja, tanpa sungguh-sungguh percaya akan hasilnya.',
+      'Saya merasa para santri memang sulit berubah, seolah-olah usaha apa pun akan sia-sia.',
+      'Saya jarang memikirkan masa depan pengasuhan; fokus saya hanya bagaimana bertahan hari ini.',
+      'Saya sering membiarkan santri atau rekan bergantung pada saya dalam hal kecil karena itu membuat saya merasa masih dibutuhkan, walau sebenarnya saya sudah lelah.'
+    ]},
+  { id:'sedih', order:4,  scale:75,  name:'Sedih (Grief)',
+    description:'Level Sedih (Grief) adalah kondisi duka dan penyesalan yang aktif... energi ini terikat kuat pada masa lalu.',
+    statements:[
+      'Saya sering membandingkan santri sekarang dengan angkatan dulu dan merasa zaman terbaik sudah lewat.',
+      'Saya sering kecewa dan mengeluh karena kondisi santri sekarang tidak seperti yang saya harapkan.',
+      'Saya merasa sangat kehilangan ketika ada santri yang keluar, seolah semua kerja keras saya menjadi sia-sia.',
+      'Saya sering menyesali keputusan masa lalu dalam mengasuh, hingga ragu untuk mengambil keputusan baru sekarang.'
+    ]},
+  { id:'takut', order:5,  scale:100, name:'Takut (Fear)',
+    description:'Level Takut (Fear) adalah kondisi kecemasan yang konstan... keputusan didasarkan pada upaya menghindari bahaya.',
+    statements:[
+      'Saya membuat banyak aturan kecil karena merasa semuanya akan berantakan jika saya tidak mengontrol setiap detail.',
+      'Saya sering menunda menegur santri bermasalah karena takut reaksi mereka akan memperburuk keadaan.',
+      'Saya sering membayangkan hal buruk yang mungkin terjadi dan sulit menikmati ketenangan hari ini.',
+      'Saya menjaga jarak dengan santri atau rekan kerja karena takut terluka atau dikecewakan.'
+    ]},
+  { id:'keinginan', order:6,  scale:125, name:'Keinginan (Desire)',
+    description:'Level Keinginan (Desire) adalah kondisi ambisi dan kerinduan yang intens... sering berujung kekecewaan.',
+    statements:[
+      'Saya merasa puas jika santri atau program saya berhasil karena itu membuat saya terlihat berprestasi di mata orang lain.',
+      'Saya sering melihat keberhasilan santri sebagai cerminan kemampuan saya, dan kegagalan mereka membuat saya malu.',
+      'Saya mudah kecewa ketika target tidak tercapai atau ketika pujian yang saya harapkan tidak datang.',
+      'Saya sering membandingkan diri dengan pengasuh atau pesantren lain dan merasa harus menjadi yang paling unggul.'
+    ]},
+  { id:'marah', order:7,  scale:150, name:'Marah (Anger)',
+    description:'Level Marah (Anger) adalah kondisi kebencian dan permusuhan yang aktif... energinya tinggi namun destruktif.',
+    statements:[
+      'Saya kadang memberikan hukuman lebih berat dari seharusnya karena merasa kesal dan ingin memberi pelajaran keras.',
+      'Saya menyadari bahwa suasana asrama sering menjadi tegang karena santri takut akan reaksi saya.',
+      'Saya sulit melupakan santri atau rekan yang pernah membuat saya marah, dan itu memengaruhi sikap saya terhadap mereka.',
+      'Saya sering menyalahkan situasi atau orang lain ketika terjadi masalah, daripada mencari peran saya di dalamnya.'
+    ]},
+  { id:'bangga', order:8,  scale:175, name:'Bangga (Pride)',
+    description:'Level Bangga (Pride) adalah kondisi kesombongan dan ilusi keunggulan... rapuh dan defensif.',
+    statements:[
+      'Saya sering merasa saran dari rekan atau pimpinan tidak relevan, karena saya yakin hanya saya yang benar-benar paham kondisi santri saya.',
+      'Saya merasa penting menjaga citra pengasuh berwibawa, meski saya tahu ada hal batin santri yang belum saya sentuh.',
+      'Saya kadang merasa lebih baik dari pengasuh lain yang gagal, atau dari santri yang tidak berkembang cepat.',
+      'Saya sering menyalahkan sistem atau lingkungan saat terjadi masalah, daripada mengakui bagian saya di dalamnya.'
+    ]},
+  { id:'keberanian', order:9,  scale:200, name:'Keberanian (Courage)',
+    description:'Titik Kritis (Tipping Point). Anda tidak lagi lumpuh oleh ketakutan atau ego... aktif mencari pelatihan & mencoba metode baru.',
+    statements:[
+      'Saya berani mengakui kesalahan tanpa merasa rendah diri, karena kesalahan adalah bagian dari proses belajar.',
+      'Saya mau mencoba cara baru dalam mendidik santri meski belum tentu berhasil.',
+      'Saya melihat kesulitan sebagai tantangan yang bisa dipelajari, bukan beban yang harus dihindari.',
+      'Saya aktif mencari ilmu/pelatihan untuk meningkatkan kualitas diri dan pengasuhan.'
+    ]},
+  { id:'netralitas', order:10, scale:250, name:'Netralitas (Neutrality)',
+    description:'Kondisi kenyamanan, kelenturan, dan non-penghakiman... keamanan batin tidak bergantung kondisi luar.',
+    statements:[
+      'Saya mampu menyesuaikan diri dengan perubahan aturan atau kebijakan baru tanpa panik.',
+      'Saya menjalankan tugas pengasuhan dengan tenang tanpa membawa stres ke luar asrama.',
+      'Saya berusaha memahami santri dan rekan kerja tanpa memberi label “baik/buruk”.',
+      'Saya merasa nyaman dengan keputusan saya, meski tidak semua orang setuju.'
+    ]},
+  { id:'kemauan', order:11, scale:310, name:'Kemauan (Willingness)',
+    description:'Kondisi proaktif, antusias, dan niat baik... komitmen penuh pada perbaikan & pembelajaran.',
+    statements:[
+      'Saya bersemangat dalam menjalankan peran dan semangat itu menular.',
+      'Saya dengan sukacita mencari ilmu baru untuk menjadi pengasuh lebih bijak.',
+      'Saya melihat masalah sebagai kesempatan untuk belajar dan memperbaiki cara mendidik.',
+      'Saya memiliki komitmen jangka panjang terhadap pembentukan karakter santri.'
+    ]},
+  { id:'penerimaan', order:12, scale:350, name:'Penerimaan (Acceptance)',
+    description:'Wawasan damai bahwa segala sesuatu berjalan sebagaimana mestinya... bebas dari keterikatan hasil.',
+    statements:[
+      'Saya mampu memaafkan santri dan diri saya sendiri dengan tulus, tanpa menyimpan luka.',
+      'Saya berfokus pada apa yang bisa saya lakukan hari ini.',
+      'Saya menerima setiap santri apa adanya, tanpa memaksa mereka menjadi versi ideal saya.',
+      'Saya tetap tenang saat terjadi konflik, karena setiap gesekan adalah bagian dari pertumbuhan.'
+    ]},
+  { id:'akal', order:13, scale:400, name:'Akal Budi (Reason)',
+    description:'Kondisi intelektual, logis, dan rasional... memimpin dengan data, logika, strategi.',
+    statements:[
+      'Saya menata sistem pengasuhan secara terstruktur dan logis agar adil dan konsisten.',
+      'Saya membuat keputusan berdasarkan data dan fakta, bukan sekadar perasaan.',
+      'Saya terus memperdalam ilmu untuk meningkatkan kompetensi.',
+      'Saya berkomunikasi jernih dan objektif agar santri memahami, bukan sekadar patuh.'
+    ]},
+  { id:'cinta', order:14, scale:500, name:'Cinta (Love)',
+    description:'Kasih sayang tanpa syarat dan rasa hormat mendalam terhadap kehidupan... memimpin dengan welas asih.',
+    statements:[
+      'Saya melayani santri dengan cinta dan keinginan tulus untuk melihat mereka tumbuh.',
+      'Saya melihat potensi dan kebaikan ilahi di balik setiap perilaku santri.',
+      'Saya mengampuni dengan mudah tanpa menunggu permintaan maaf.',
+      'Saya menciptakan suasana aman dan tenang sehingga santri berani membuka diri.'
+    ]},
+  { id:'suka', order:15, scale:540, name:'Suka Cita (Joy)',
+    description:'Kebahagiaan batin stabil dan independen... energi riang yang transformatif.',
+    statements:[
+      'Saya merasakan kegembiraan alami dalam peran saya dan itu menular pada sekitar.',
+      'Saya menemukan keindahan dalam rutinitas sederhana setiap hari sebagai karunia Allah.',
+      'Saya tetap bahagia apa pun hasil pengasuhan, karena kebahagiaan saya tidak bergantung hasil.',
+      'Saya merasakan ide dan solusi kreatif mengalir karena hati bebas dari ketakutan/ego.'
+    ]},
+  { id:'kedamaian', order:16, scale:600, name:'Kedamaian (Peace)',
+    description:'Transendensi & keheningan mendalam... kehadiran menenangkan seluruh komunitas.',
+    statements:[
+      'Saya tidak melawan masalah; saya mengizinkannya ada dan menemukan kedamaian di tengahnya.',
+      'Saya sadar ketenangan saya lebih kuat dari ribuan kata; kehadiran saya mendamaikan.',
+      'Saya hidup seimbang antara aktivitas dan keheningan, berpikir dan merasa.',
+      'Saya merasa bertindak sebagai saluran kehendak Allah, bukan dari ego pribadi.'
+    ]},
+  { id:'pencerahan', order:17, scale:850, name:'Pencerahan (Enlightenment)',
+    description:'Kesadaran murni, Kesatuan, dan Realitas Tertinggi… menjadi instrumen perubahan spiritual.',
+    statements:[
+      'Saya tidak lagi merasa sebagai pelaku; semua yang terjadi hanyalah kehendak Allah yang bekerja melalui saya.',
+      'Saya melihat setiap santri dan peristiwa sebagai satu kesatuan dengan diri saya.',
+      'Saya hadir bukan untuk mengubah, namun kehadiran saya membawa perubahan tanpa kata.',
+      'Saya hidup dalam keheningan batin di mana kasih dan kehendak Allah mengalir tanpa hambatan.'
+    ]}
+];
+
+// ========= STATE & UTIL =========
 let app = {
-  nama:'', instansi:'', currentQ:0, answers:Array(LEVELS.length*4).fill(null),
+  nama:'', instansi:'',
+  currentQ:0,
+  answers:Array(LEVELS.length*4).fill(null),
+  result:null,
   report:{current:0, answers:['','','']},
-  result:null, member:null
+  member:null
 };
-
-function qs(id){return document.getElementById(id)}
-function show(id){document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden')); qs(id).classList.remove('hidden'); window.scrollTo(0,0);}
-function goHome(){show('home')}
-function cancelHome(){if(confirm('Batalkan tes dan kembali?')) goHome();}
-
-function startTest(){
-  const n=qs('nama').value.trim(), ins=qs('instansi').value.trim();
-  if(!n||!ins) return alert('Mohon isi Nama & Instansi terlebih dahulu.');
-  app.nama=n; app.instansi=ins; app.currentQ=0; app.answers=Array(LEVELS.length*4).fill(null);
-  show('testCard'); renderQuestion();
-}
-
 const SCALE = [
   {key:1,label:'Tidak Pernah'},
   {key:2,label:'Jarang'},
@@ -189,15 +336,28 @@ const SCALE = [
   {key:5,label:'Selalu'},
 ];
 
+function qs(id){return document.getElementById(id)}
+function show(id){document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden')); qs(id).classList.remove('hidden'); window.scrollTo(0,0);}
+function goHome(){show('home')}
+function cancelHome(){if(confirm('Batalkan tes dan kembali?')) goHome();}
+
+// ========= TES =========
+function startTest(){
+  const n=qs('nama').value.trim(), ins=qs('instansi').value.trim();
+  if(!n||!ins) return alert('Mohon isi Nama & Instansi terlebih dahulu.');
+  app.nama=n; app.instansi=ins; app.currentQ=0; app.answers=Array(LEVELS.length*4).fill(null);
+  show('testCard'); renderQuestion();
+}
 function renderQuestion(){
   const i=app.currentQ, li=Math.floor(i/4), si=i%4;
   qs('qCounter').innerText = `Pertanyaan ${i+1} / ${LEVELS.length*4}`;
   qs('question').innerHTML = `<strong>${i+1}.</strong> ${LEVELS[li].statements[si]}`;
   const box = qs('scale'); box.innerHTML='';
   SCALE.forEach(item=>{
-    const div = document.createElement('div'); div.className='scale-item'+(app.answers[i]===item.key?' active':'');
+    const div = document.createElement('div');
+    div.className='scale-item'+(app.answers[i]===item.key?' active':'');
     div.onclick=()=>{app.answers[i]=item.key; renderQuestion();}
-    div.innerHTML = `<div class='scale-key'>${item.key}</div><div>${item.label}</div>`;
+    div.innerHTML = `<div class="scale-key">${item.key}</div><div>${item.label}</div>`;
     box.appendChild(div);
   });
   qs('prevBtn').classList.toggle('hidden', i===0);
@@ -205,25 +365,59 @@ function renderQuestion(){
   qs('finishBtn').classList.toggle('hidden', i!==LEVELS.length*4-1);
   qs('progress').innerText = `Terisi: ${app.answers.filter(x=>x!==null).length} / ${LEVELS.length*4}`;
 }
-
 function nextQ(){ if(app.answers[app.currentQ]==null) return alert('Mohon pilih jawaban.'); app.currentQ++; renderQuestion(); }
 function prevQ(){ app.currentQ--; renderQuestion(); }
 
-function finishTest(){
-  if(app.answers.includes(null)) return alert('Mohon jawab semua.');
+async function finishTest(){
+  if(app.answers.includes(null)) return alert('Mohon jawab semua pertanyaan.');
+  // hitung rata-rata per level
   const scores=[]; let idx=0;
   for(let i=0;i<LEVELS.length;i++){ let sum=0; for(let j=0;j<4;j++) sum+=app.answers[idx++]; scores.push({index:i, avg:sum/4}); }
-  let best=scores[0]; for(const s of scores){ if(s.avg>best.avg) best=s; else if(s.avg===best.avg && s.index>best.index) best=s; }
-  const dom=LEVELS[best.index];
-  app.result = { nama:app.nama, instansi:app.instansi, time:new Date().toISOString(), dominantIndex:best.index, dominant:dom, answers:app.answers };
-  const orderTxt = `(${dom.order}/17)`;
-  qs('certTitle').innerText = `Saat ini Anda berada di Level ${dom.name} ${orderTxt}`;
+  // dominan: avg tertinggi; jika seri, pilih level dengan order lebih tinggi
+  let best=scores[0];
+  for(const s of scores){ if(s.avg>best.avg) best=s; else if(s.avg===best.avg && s.index>best.index) best=s; }
+  const dom = LEVELS[best.index];
+
+  app.result = {
+    nama: app.nama, instansi: app.instansi, time:new Date().toISOString(),
+    dominantIndex: best.index, dominant: {name:dom.name, order:dom.order, scale:dom.scale, description:dom.description},
+    answers: app.answers
+  };
+
+  // tampil sertifikat
+  qs('certTitle').innerText = `Saat ini Anda berada di Level ${dom.name} (${dom.order}/17)`;
   qs('certDesc').innerText = dom.description || '';
-  qs('certNama').innerText = app.nama; qs('certInstansi').innerText = app.instansi; qs('certTanggal').innerText = new Date(app.result.time).toLocaleString();
+  qs('certNama').innerText = app.nama;
+  qs('certInstansi').innerText = app.instansi;
+  qs('certTanggal').innerText = new Date(app.result.time).toLocaleString('id-ID');
+
   show('resultCard');
+
+  // simpan ke local index (untuk Admin perangkat ini)
+  saveToLocalIndex(app.result);
+
+  // kirim ke Google Sheet (Apps Script)
+  try{
+    await fetch(GAS_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        type:'result',
+        nama: app.result.nama,
+        instansi: app.result.instansi,
+        level: dom.name,
+        order: dom.order,
+        skor: best.avg.toFixed(2),
+        jawaban: app.result.answers,
+        waktu_client: new Date().toLocaleString('id-ID')
+      })
+    });
+  }catch(e){
+    console.warn('Gagal kirim ke Google Sheet:', e);
+  }
 }
 
-// Report step-by-step
+// ========= LAPORAN RIYADHAH =========
 const reportQ = [
   'Aksi Riyadhah apa saja yang sudah Anda jalankan pekan ini?',
   'Perubahan seperti apa yang Anda rasakan di dalam diri Anda?',
@@ -251,88 +445,72 @@ async function sendReport(){
   const v=qs('repAns').value.trim(); if(!v) return alert('Mohon isi jawaban.');
   app.report.answers[app.report.current]=v;
   const payload = {
-    nama: app.nama, instansi: app.instansi, pekan: qs('weekNo').value || '1',
-    waktu: new Date().toLocaleString('id-ID'),
-    dominant: app.result ? app.result.dominant.name : '-',
-    laporan: { aksi: app.report.answers[0], perubahan_diri: app.report.answers[1], perubahan_luar: app.report.answers[2] }
+    type:'report',
+    nama: app.nama,
+    instansi: app.instansi,
+    pekan: qs('weekNo').value || '1',
+    waktu_client: new Date().toLocaleString('id-ID'),
+    dominant: app.result ? app.result.dominant.name : '',
+    laporan: {
+      aksi: app.report.answers[0],
+      perubahan_diri: app.report.answers[1],
+      perubahan_luar: app.report.answers[2]
+    }
   };
-  const htmlBody = `
-    <h2>Laporan Riyadhah Mingguan</h2>
-    <p><strong>Nama:</strong> ${payload.nama}</p>
-    <p><strong>Instansi:</strong> ${payload.instansi}</p>
-    <p><strong>Pekan ke:</strong> ${payload.pekan}</p>
-    <p><strong>Waktu:</strong> ${payload.waktu}</p>
-    <p><strong>Level Dominan:</strong> ${payload.dominant}</p>
-    <hr>
-    <p><strong>1️⃣ Aksi Riyadhah:</strong><br>${payload.laporan.aksi}</p>
-    <p><strong>2️⃣ Perubahan Diri:</strong><br>${payload.laporan.perubahan_diri}</p>
-    <p><strong>3️⃣ Perubahan di Lingkungan:</strong><br>${payload.laporan.perubahan_luar}</p>`;
-  qs('reportStatus').innerText = 'Mengirim laporan...';
-  try {
-    const res = await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ _subject: `Laporan Riyadhah Mingguan - ${payload.nama}`, message: htmlBody })
-    });
-    if (res.ok) qs('reportStatus').innerText = '✅ Laporan berhasil dikirim ke Supervisor.';
-    else qs('reportStatus').innerText = '⚠️ Gagal otomatis; mohon kirim manual.';
-  } catch (e) {
-    qs('reportStatus').innerText = '❌ Kesalahan jaringan.';
+  qs('reportStatus').innerText = 'Mengirim laporan ke Google Sheet...';
+  try{
+    const res = await fetch(GAS_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+    if(res.ok) qs('reportStatus').innerText='Terima kasih — laporan berhasil dikirim.';
+    else qs('reportStatus').innerText='Gagal mengirim; coba lagi.';
+  }catch(e){
+    qs('reportStatus').innerText='Kesalahan jaringan; coba lagi.';
   }
 }
 
-// Member
+// ========= MEMBER =========
 function openMember(){ show('memberCard'); qs('memNama').value = qs('nama').value; qs('memInst').value = qs('instansi').value; }
 function memberLogin(){
   const n=qs('memNama').value.trim(), ins=qs('memInst').value.trim();
   if(!n||!ins) return alert('Nama & Instansi wajib.');
   app.member = {nama:n, instansi:ins}; qs('memberArea').classList.remove('hidden');
   qs('memberWho').innerText = `${n} — ${ins}`;
-  const key = `tsp_${n.replace(/\s+/g,'_')}_${ins.replace(/\s+/g,'_')}`;
+  const key = keyFor(n,ins);
   const data = localStorage.getItem(key);
-  qs('memberInfo').innerHTML = data ? `Hasil terakhir: <strong>${JSON.parse(data).dominant.name}</strong> (${new Date(JSON.parse(data).time).toLocaleString()})` : 'Belum ada hasil.';
+  qs('memberInfo').innerHTML = data ? `Hasil terakhir: <strong>${JSON.parse(data).dominant.name}</strong> (${new Date(JSON.parse(data).time).toLocaleString('id-ID')})` : 'Belum ada hasil.';
 }
 function memberShow(){
   const n=app.member?.nama, ins=app.member?.instansi; if(!n||!ins) return alert('Belum login member.');
-  const key = `tsp_${n.replace(/\s+/g,'_')}_${ins.replace(/\s+/g,'_')}`; const data = localStorage.getItem(key);
+  const key = keyFor(n,ins); const data = localStorage.getItem(key);
   if(!data) return alert('Tidak ada hasil tersimpan.');
   const r = JSON.parse(data); app.result = r;
   const dom = LEVELS[r.dominantIndex] || r.dominant;
   const orderTxt = dom.order ? ` (${dom.order}/17)` : '';
   qs('certTitle').innerText = `Saat ini Anda berada di Level ${dom.name}${orderTxt}`;
   qs('certDesc').innerText = dom.description || '';
-  qs('certNama').innerText = r.nama; qs('certInstansi').innerText = r.instansi; qs('certTanggal').innerText = new Date(r.time).toLocaleString();
+  qs('certNama').innerText = r.nama; qs('certInstansi').innerText = r.instansi; qs('certTanggal').innerText = new Date(r.time).toLocaleString('id-ID');
   show('resultCard');
-}
-function saveMember(){
-  if(!app.result) return alert('Belum ada hasil.');
-  const key = `tsp_${app.result.nama.replace(/\s+/g,'_')}_${app.result.instansi.replace(/\s+/g,'_')}`;
-  localStorage.setItem(key, JSON.stringify(app.result));
-  let idx = JSON.parse(localStorage.getItem('tsp_index')||'[]');
-  if(!idx.find(i=>i.key===key)) idx.push({key, nama:app.result.nama, instansi:app.result.instansi, time:app.result.time, level:app.result.dominant.name});
-  localStorage.setItem('tsp_index', JSON.stringify(idx));
-  alert('Hasil disimpan. Anda dapat mengaksesnya dari menu Member.');
 }
 function memberReport(){ show('reportCard'); app.report = {current:0, answers:['','','']}; renderReportStep(); }
 function memberLogout(){ app.member=null; show('home'); }
 
-// Admin
+// ========= ADMIN (perangkat ini) =========
 function openAdmin(){ show('adminLogin'); }
 function adminAuth(){ const p=qs('adminPin').value.trim(); if(p===ADMIN_PIN){ loadAdmin(); show('adminPanel'); } else alert('PIN salah.'); }
 function adminLogout(){ qs('adminPin').value=''; show('home'); }
 function loadAdmin(){
   const tbody = qs('adminTable').querySelector('tbody'); tbody.innerHTML='';
   const idx = JSON.parse(localStorage.getItem('tsp_index')||'[]');
+  idx.sort((a,b)=> new Date(b.time)-new Date(a.time));
   idx.forEach(item=>{
     const tr=document.createElement('tr');
-    tr.innerHTML = `<td>${item.nama}</td><td>${item.instansi}</td><td>${item.level||''}</td><td>${new Date(item.time).toLocaleString()}</td>
+    tr.innerHTML = `<td>${item.nama}</td><td>${item.instansi}</td><td>${item.level||''}</td><td>${new Date(item.time).toLocaleString('id-ID')}</td>
     <td><button class='btn-ghost' onclick="adminView('${item.key}')">Lihat</button> <button class='btn-ghost' onclick="adminDel('${item.key}')">Hapus</button></td>`;
     tbody.appendChild(tr);
   });
 }
 function adminView(key){
   const data = JSON.parse(localStorage.getItem(key)||'null'); if(!data) return alert('Data tidak ditemukan.');
-  let html = `<div><strong>${data.nama}</strong> — ${data.instansi}</div><div class='small'>${new Date(data.time).toLocaleString()}</div>`;
+  let html = `<div><strong>${data.nama}</strong> — ${data.instansi}</div><div class='small'>${new Date(data.time).toLocaleString('id-ID')}</div>`;
   html += `<div style='margin-top:8px'><strong>Level:</strong> ${data.dominant?.name||''} (${(LEVELS[data.dominantIndex]||{}).order||''}/17)</div>`;
   html += `<pre style='white-space:pre-wrap;background:#fbfbfd;border:1px solid #eef2ff;padding:10px;border-radius:8px;margin-top:8px'>${JSON.stringify(data,null,2)}</pre>`;
   qs('adminDetail').innerHTML = html;
@@ -351,13 +529,25 @@ function exportCSV(){
   const rows = [['Nama','Instansi','Level','Waktu','Jawaban']];
   idx.forEach(item=>{
     const data = JSON.parse(localStorage.getItem(item.key)||'null')||{};
-    rows.push([ data.nama||item.nama, data.instansi||item.instansi, (data.dominant&&data.dominant.name)||item.level, new Date((data.time||item.time)).toLocaleString(), JSON.stringify(data.answers||[]) ]);
+    rows.push([ data.nama||item.nama, data.instansi||item.instansi, (data.dominant&&data.dominant.name)||item.level, new Date((data.time||item.time)).toLocaleString('id-ID'), JSON.stringify(data.answers||[]) ]);
   });
   const csv = rows.map(r=> r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
   const blob = new Blob([csv], {type:'text/csv'});
   const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='tsp_export.csv'; a.click(); URL.revokeObjectURL(url);
 }
 
+// ========= LOCAL STORAGE HELPERS =========
+function keyFor(nama,instansi){ return `tsp_${nama.replace(/\s+/g,'_')}_${instansi.replace(/\s+/g,'_')}`; }
+function saveToLocalIndex(result){
+  const key = keyFor(result.nama, result.instansi);
+  localStorage.setItem(key, JSON.stringify(result));
+  let idx = JSON.parse(localStorage.getItem('tsp_index')||'[]');
+  if(!idx.find(i=>i.key===key)) idx.push({key, nama:result.nama, instansi:result.instansi, time:result.time, level:result.dominant.name});
+  else idx = idx.map(i=> i.key===key ? {...i, time:result.time, level:result.dominant.name} : i);
+  localStorage.setItem('tsp_index', JSON.stringify(idx));
+}
+
+// ========= INIT =========
 goHome();
 </script>
 </body>
